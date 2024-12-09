@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOMEPAGE_ASSIGNMENT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0d1117;
+            color: white;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            background-color: #ffffff;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            margin-right: 20px;
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+        nav > div {
+            position: relative;
+        }
+        nav a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            padding: 10px;
+        }
+        nav a:hover {
+            color: #007BFF;
+        }
+        
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #f8f8f8;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 10px 20px;
+            min-width: 200px;
+            z-index: 10;
+        }
+        .dropdown a {
+            display: block;
+            color: #000;
+            padding: 5px 0;
+        }
+        .dropdown a:hover {
+            color: #007BFF;
+        }
+        nav > div:hover .dropdown {
+            display: block;
+        }
+        
+        .auth {
+            margin-left: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: absolute;
+            font-weight: bold;
+            color: #000;
+            font-size: 14px;
+            top: 10px;
+            right: 20px;
+        }
+
+        .auth a {
+            text-decoration: none;
+            color:black;
+            padding: 10px; 
+        }
+        .auth a:hover {
+            color: #007BFF; 
+        }
+
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            overflow: hidden;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+        .slide {
+            width: 100%;
+            height: 60vh;
+            flex-shrink: 0;
+            background-size: cover;
+            background-position: center;
+            
+        }
+        .slide:nth-child(1) {
+            background-image: url('resources/banner1.jpg');
+        }
+        .slide:nth-child(2) {
+            background-image: url('resources/banner2.jpeg');
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 18px;
+            padding: 10px 15px;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        .bannerProduct {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .product-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px; 
+            flex-wrap: wrap; 
+        }
+        .product-item {
+            text-align: center; 
+            margin: 10px; 
+        }
+        .product-item img {
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+            max-width: 100%;
+            height: auto;
+        }
+        .product-item img:hover {
+            transform: scale(1.05); 
+        }
+        .product-item p {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #ffffff; 
+            font-style: bold;
+        }
+        .contact-section {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 50px 20px;
+            background: linear-gradient(to right, #ffffff, #f3d0af);
+        }
+        .contact-text {
+            text-align: left; 
+            max-width: 600px;
+            margin-left: 150px;
+            padding: 20px;
+        }
+        .contact-text h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: black;
+        }
+        .contact-text p {
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.5;
+        }
+        .contact-text button {
+            padding: 10px 40px;
+            font-size: 16px;
+            color: #555;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #222;
+            color: #aaa;
+            padding: 20px;
+            text-align: center;
+        }
+        footer a {
+            color: #aaa;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            color: white;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="#"><img src="resources/logo.png" alt="COMPANY Logo" width="120" height="120"></a>
+        </div>
+        <nav>
+            <div>
+                <a href="#">회사소개</a>
+                <div class="dropdown">
+                    <a href="#">인사말</a>
+                    <a href="#">연혁</a>
+                    <a href="#">R&D</a>
+                    <a href="#">오시는길</a>
+                </div>
+            </div>
+            <div>
+                <a href="#">응용자료</a>
+                <div class="dropdown">
+                    <a href="#">가스분석기</a>
+                    <a href="#">환경</a>
+                </div>
+            </div>
+            <div>
+                <a href="#">제품소개</a>
+                <div class="dropdown">
+                    <a href="#">GC</a>
+                    <a href="#">FTIR</a>
+                    <a href="#">ICP-MS</a>
+                    <a href="#">Moisture Analyzer(GAS)</a>
+                    <a href="#">VICI parts</a>
+                </div>
+            </div>
+            <div>
+                <a href="#">소모품안내</a>
+                <div class="dropdown">
+                    <a href="#">소모품검색</a>
+                </div>
+            </div>
+            <div>
+                <a href="#">제품문의</a>
+                <div class="dropdown">
+                    <a href="#">견적문의</a>
+                    <a href="#">내 문의내역</a>
+                </div>
+            </div>
+            <div>
+                <a href="#">고객센터</a>
+                <div class="dropdown">
+                    <a href="#">공지사항</a>
+                    <a href="#">행사일정</a>
+                    <a href="#">자료실</a>
+                </div>
+            </div>
+        </nav>
+            <div class="auth">
+                <a href="login.html">로그인</a> | <a href="signup.html">회원가입</a>
+            </div>
+            
+    </header>
+
+
+    <div class="slider">
+        <div class="slides">
+            <div class="slide"></div>
+            <div class="slide"></div>
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+    
+    
+
+<div class="bannerProduct">
+    <h2>BEST Product</h2>
+    <div class="product-list">
+        <div class="product-item">
+        <a href="gc.html"><img src="resources/gc.webp" alt="GC" width = "300" height="300"></a>
+        <p>GC (Gas Chromatograph)</p>
+        </div>
+        <div class="product-item">
+        <a href="ftir.html"><img src="resources/ftir.jpg" alt="FTIR" width = "300" height="300"></a>
+        <p>FTIR (Fourier Transform Infrared Spectrometer)</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- Contact Section -->
+<div class="contact-section">
+    <div class="contact-text">
+        <h1>CONTACT US</h1>
+        <p>언제든 문의사항을 남겨주시면 빠른 시간 내에 최적의 답변을 제공하겠습니다.<br>
+            함께 성장하고 신뢰를 쌓아가는 PARTNER로서 최선을 다하겠습니다.
+        </p>
+        <button onclick="location.href='#'">자세히 보기</button>
+    </div>
+</div>
+
+
+
+<!-- Footer -->
+<footer>
+    <p>
+        <a href="#">사이트 이용약관</a> | 
+        <a href="#">개인정보처리방침</a> | 
+        <a href="#">이메일무단수집거부</a>
+    </p>
+    <p>Copyright 2024 WEBSITE NAME. All rights reserved.</p>
+</footer>
+
+<script src = "javascript.js"></script>
+
+</body>
+</html>
